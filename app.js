@@ -11,6 +11,7 @@ app.set('trust proxy', true)
 app.use(express.json())
 
 app.use('/api', messageRoute)
+app.use('/', messageRoute)
 
 app.get('/', (req, res) => {
     res.send('Welcome to home page')
