@@ -1,0 +1,13 @@
+{
+  "name": "message-api",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.99.1",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1"
+  }
+}
