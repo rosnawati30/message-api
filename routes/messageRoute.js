@@ -6,6 +6,4 @@ const router = express.Router()
 router.post('/messages', postMessageController)
 router.get('/messages/:id', getMessageController)
 
-router.get('/share/:id', getMessageController)
-
 module.exports = router

@@ -4,11 +4,9 @@ exports.postMessageController = async (req, res, next) => {
     try{
         const {message} = req.body
         const result = await postMesssageService(message)
-
-        const shareLink = `${req.protocol}://${req.get('host')}/share/${result.id}`
     
         res.json({
-            share_link: shareLink,
+            id: result.id,
             expires_at: result.expires_at
         })
     }
