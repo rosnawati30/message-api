@@ -1,12 +1,14 @@
 require('dotenv').config()
 
 const express = require('express')
+const cors = require('cors')
 const messageRoute = require('./routes/messageRoute')
 
 const app = express()
 const port = process.env.PORT || 3000
 
-app.set('trust proxy', true)
+//cors 
+app.use(cors())
 
 //middleware for parse json body
 app.use(express.json())
