@@ -2,8 +2,8 @@ const { postMesssageService, getMesssageService } = require("../service/messageS
 
 exports.postMessageController = async (req, res, next) => {
     try{
-        const {message} = req.body
-        const result = await postMesssageService(message)
+        const {to, from, message} = req.body
+        const result = await postMesssageService({to, from, message})
     
         res.json({
             id: result.id,
