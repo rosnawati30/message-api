@@ -5,11 +5,13 @@ exports.postMesssageService = async (message) => {
         const expiresAt = new Date()
         expiresAt.setHours(expiresAt.getHours() + 24)
 
-    //insert message text to 'messages' table in supabase
+    //insert to, from, and message text to 'messages' table in supabase
     const{data, error} = await supabase
         .from('messages')
         .insert([
             {
+                to,
+                from,
                 message,
                 expires_at: expiresAt
             }
@@ -27,7 +29,7 @@ exports.getMesssageService = async (id) => {
     //select message from 'messages' table 
     const {data, error} = await supabase
         .from('messages')
-        .select('id, message, expires_at')
+        .select('id, to, from, message, expires_at')
         .eq('id', id)
         .single()
 
