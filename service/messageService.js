@@ -13,6 +13,7 @@ exports.postMesssageService = async ({to, from, message}) => {
                 to,
                 from,
                 message,
+                template,
                 expires_at: expiresAt
             }
         ])
@@ -29,7 +30,7 @@ exports.getMesssageService = async (id) => {
     //select message from 'messages' table 
     const {data, error} = await supabase
         .from('messages')
-        .select('id, to, from, message, expires_at')
+        .select('id, to, from, message, template, expires_at')
         .eq('id', id)
         .single()
 
