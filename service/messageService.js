@@ -1,6 +1,6 @@
 const supabase = require('../config/supabaseConfig')
 
-exports.postMesssageService = async ({to, from, message}) => {
+exports.postMesssageService = async ({to, from, message, template}) => {
     //create expires time 
         const expiresAt = new Date()
         expiresAt.setHours(expiresAt.getHours() + 24)
